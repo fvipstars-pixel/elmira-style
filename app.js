@@ -81,6 +81,15 @@ copyBtn.addEventListener('click', async () => {
 // PWA install prompt
 let deferredPrompt;
 const installBtn = document.getElementById('installBtn');
+const iosInstallHint = document.getElementById('iosInstallHint');
+
+const isIos = /iphone|ipad|ipod/i.test(navigator.userAgent);
+const isStandalone =
+  window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+
+if (isIos && !isStandalone) {
+  iosInstallHint.hidden = false;
+}
 
 window.addEventListener('beforeinstallprompt', (e) => {
   e.preventDefault();
