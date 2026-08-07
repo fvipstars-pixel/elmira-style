@@ -1,4 +1,4 @@
-const CACHE_NAME = 'elmira-style-v1';
+const CACHE_NAME = 'elmira-style-v2';
 const ASSETS = [
   './',
   './index.html',
@@ -32,6 +32,23 @@ self.addEventListener('activate', (event) => {
 
 self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') return;
+
+  // Pages (HTML) go network-first so visitors always get the latest content;
+  // the cache is only a fallback for offline viewing of the last-seen version.
+  if (event.request.mode === 'navigate') {
+    event.respondWith(
+      fetch(event.request)
+        .then((response) => {
+          const copy = response.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
+          return response;
+        })
+        .catch(() => caches.match(event.request).then((cached) => cached || caches.match('./index.html')))
+    );
+    return;
+  }
+
+  // Static assets (css, js, images) stay cache-first for speed and offline use.
   event.respondWith(
     caches.match(event.request).then(
       (cached) =>
