@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Эльмира Федорова — Personal Stylist</title>
+<meta name="description" content="Персональный стилист Эльмира Федорова: разбор гардероба, шоппинг-сопровождение, подбор капсулы, стилизация для бренда." />
+<meta name="theme-color" content="#161616" />
+<link rel="manifest" href="manifest.json" />
+<link rel="icon" href="icons/favicon-32.png" sizes="32x32" />
+<link rel="apple-touch-icon" href="icons/icon-192.png" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="site-header" id="top">
+  <div class="header-inner">
+    <a class="brand" href="#top">Эльмира Федорова</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Меню" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="main-nav" id="mainNav">
+      <a href="#services">Услуги</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#booking">Запись</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <img class="hero-photo" src="media/hero-portrait.jpg" alt="Эльмира Федорова, персональный стилист" width="600" height="750" />
+    <div class="hero-text">
+      <p class="eyebrow">Personal Stylist</p>
+      <h1>Эльмира<br>Федорова</h1>
+      <p class="lead">Привет! Меня зовут Эльмира, твой проводник в стиль моды. Вот уже 3 года я помогаю женщинам найти свой стиль.</p>
+      <p class="quote">«Вы уже прекрасны, я просто помогаю расставить акценты в одежде»</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#booking">Записаться</a>
+        <a class="btn btn-ghost" href="tg://resolve?domain=elmira_fedorova" target="_blank" rel="noopener">Задать вопрос</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="pains">
+    <h2>Задачи, которые я решаю</h2>
+    <ul class="pains-list">
+      <li>Ваш гардероб забит одеждой, а носить нечего</li>
+      <li>Хождение по магазинам в поисках вещей вызывает у вас стресс</li>
+      <li>Вы покупаете одежду, но всё равно не удовлетворены отражением в зеркале</li>
+      <li>Вы устали от бесполезных покупок</li>
+    </ul>
+  </section>
+
+  <section id="services" class="services">
+    <h2>Мои услуги и цены</h2>
+
+    <article class="service-card" id="service-1">
+      <img class="service-photo" src="media/service-wardrobe.jpg" alt="Разбор гардероба" loading="lazy" />
+      <h3>Разбор гардероба</h3>
+      <p class="service-price">до 3 часов — 18 000 ₽</p>
+      <p>В результате разбора гардероба ты получаешь:</p>
+      <ul class="checklist">
+        <li>образы на каждый день</li>
+        <li>шопинг-лист с указанием позиций</li>
+        <li>актуальный гардероб без просрочки</li>
+        <li>рекомендации по хранению вещей</li>
+        <li>выводы и рекомендации по одежде</li>
+        <li>контрольный срез твоего гардероба и готовность к сезону</li>
+        <li>ведение и ответы на вопросы</li>
+      </ul>
+      <button class="btn btn-primary book-btn" data-service="Разбор гардероба">Хочу на разбор</button>
+    </article>
+
+    <article class="service-card" id="service-2">
+      <img class="service-photo" src="media/service-shopping.jpg" alt="Шоппинг-сопровождение" loading="lazy" />
+      <h3>Шоппинг-сопровождение</h3>
+      <p class="service-price">до 3 часов — 18 000 ₽</p>
+      <ul class="checklist">
+        <li>прешопинг и составление маршрута шопинга</li>
+        <li>составление списка шопинга</li>
+        <li>первая встреча с клиентом лично или по видеосвязи</li>
+        <li>анализ фигуры и цветотипа клиента</li>
+        <li>сам шопинг</li>
+        <li>помощь в заказе позиций, которых не было в наличии</li>
+        <li>презентация с образами</li>
+        <li>обратная связь 2 недели</li>
+      </ul>
+      <button class="btn btn-primary book-btn" data-service="Шоппинг-сопровождение">Записаться</button>
+    </article>
+
+    <article class="service-card" id="service-3">
+      <img class="service-photo" src="media/portrait-secondary.jpg" alt="Подбор капсулы" loading="lazy" />
+      <h3>Подбор капсулы</h3>
+      <ul class="checklist">
+        <li>составление оптимальных образов для поездки</li>
+        <li>экономия места в багаже и ваших нервов</li>
+      </ul>
+      <p class="service-price">Онлайн 1 час — 5 000 ₽<br>Офлайн 1 час — 10 000 ₽</p>
+      <button class="btn btn-primary book-btn" data-service="Подбор капсулы">Записаться</button>
+    </article>
+
+    <article class="service-card" id="service-4">
+      <img class="service-photo" src="media/service-styling.jpg" alt="Стилизация для бренда или человека" loading="lazy" />
+      <h3>Стилизация для бренда или человека</h3>
+      <p>Создаём стиль для бренда и личности. Уникальный образ под ваши цели. Стиль, который выделяет и работает на вас.</p>
+      <p class="service-price">Цена: договорная</p>
+      <button class="btn btn-primary book-btn" data-service="Стилизация для бренда/человека">Записаться</button>
+    </article>
+  </section>
+
+  <section id="reviews" class="reviews">
+    <h2>Отзывы клиентов</h2>
+    <div class="review-grid">
+      <blockquote class="review-card">
+        <p>«Я очень рада, что наконец-то решилась пригласить человека, который сможет полностью оценить мои вещи и, что самое важное, указать на то, от чего уже давным-давно пора избавиться. Эльмира рассказывала, что мне подходит, а что нет: указывала на цвета, длину, фактуру — и по итогу оставила только то, что дополняет мои природные данные. Я бы точно сама не решилась. В общем, я очень рада и довольна результатом — теперь скорее хочу на шопинг ❤️»</p>
+        <footer>— клиентка, «Разбор гардероба»</footer>
+      </blockquote>
+      <blockquote class="review-card">
+        <p>«Хочу оставить слова благодарности Эльмире 🤗. Вчера впервые у меня был онлайн разбор гардероба по WhatsApp — очень замечательно, когда офлайн нет возможности. Эльмира сразу видит, определяет, какие вещи можно оставить, а какие нет. Подходит к работе ответственно и профессионально. Это невероятные эмоции, когда ты видишь себя в зеркале женственную, красивую, элегантную 🤗»</p>
+        <footer>— клиентка, онлайн-разбор гардероба</footer>
+      </blockquote>
+      <blockquote class="review-card">
+        <p>«Вижу, что проделана огромная работа в кратчайшие сроки! Очень удобно собрана вся информация в презентацию, составлено множество образов — каждый вариант уникален и интересен, индивидуально подобраны цвета и ссылки. Это, конечно, невероятный труд 🔥 Спасибо большое за терпение и профессионализм, за вклад в красоту женщины и любовь к тому, что делаешь ❤️»</p>
+        <footer>— клиентка, шоппинг-сопровождение</footer>
+      </blockquote>
+      <blockquote class="review-card">
+        <p>«Я очень давно мечтала подарить себе разбор гардероба со стилистом. Благодаря Эльмире за три часа мы очень продуктивно всё разобрали, посмотрели и сложили много классных образов! Было много отрезвляющих фраз, благодаря которым я рассталась с ещё частью отживших себя вещей. Благодарю Эльмиру за такой быстрый, продуктивный, понятный подход к человеку и вещам».</p>
+        <footer>— клиентка, «Разбор гардероба»</footer>
+      </blockquote>
+      <blockquote class="review-card">
+        <p>«Эльмира, привет! Я получила удовольствие и удовлетворение от шоппинга. Мы закупили все необходимые вещи, базовые и с изюминкой. Представляю, сколько бы я потратила время на самостоятельный шоппинг и что бы я сама купила 🙃 Спасибо, что вписались в мой бюджет 😄»</p>
+        <footer>— клиентка, шоппинг-сопровождение</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <section id="booking" class="booking">
+    <h2>Записаться на консультацию</h2>
+    <form id="bookingForm" novalidate>
+      <label>
+        Имя
+        <input type="text" name="name" required placeholder="Как к вам обращаться" />
+      </label>
+      <label>
+        Телефон или Telegram
+        <input type="text" name="contact" required placeholder="+7 ... или @username" />
+      </label>
+      <label>
+        Услуга
+        <select name="service" required>
+          <option value="" disabled selected>Выберите услугу</option>
+          <option value="Разбор гардероба">Разбор гардероба — 18 000 ₽</option>
+          <option value="Шоппинг-сопровождение">Шоппинг-сопровождение — 18 000 ₽</option>
+          <option value="Подбор капсулы">Подбор капсулы — от 5 000 ₽</option>
+          <option value="Стилизация для бренда/человека">Стилизация для бренда/человека — договорная</option>
+        </select>
+      </label>
+      <label>
+        Удобная дата/время
+        <input type="text" name="date" placeholder="Например: в выходные вечером" />
+      </label>
+      <label>
+        Комментарий
+        <textarea name="comment" rows="3" placeholder="Расскажите немного о задаче"></textarea>
+      </label>
+      <button type="submit" class="btn btn-primary">Отправить заявку</button>
+    </form>
+
+    <div id="bookingResult" class="booking-result" hidden>
+      <p>Заявка готова. Выберите, как удобнее её отправить Эльмире:</p>
+      <div class="booking-result-actions">
+        <a id="sendSms" class="btn btn-primary" href="#">Отправить SMS</a>
+        <a id="sendEmail" class="btn btn-ghost" href="#">Отправить на Email</a>
+        <a id="sendTelegram" class="btn btn-ghost" href="tg://resolve?domain=elmira_fedorova" target="_blank" rel="noopener">Написать в Telegram</a>
+      </div>
+      <button id="copyMessage" class="btn btn-link" type="button">Скопировать текст заявки</button>
+    </div>
+  </section>
+
+</main>
+
+<footer id="contacts" class="site-footer">
+  <h2>Контакты для связи</h2>
+  <div class="contact-links">
+    <a href="tel:+79161171683">Позвонить: +7 916 117-16-83</a>
+    <a href="tg://resolve?domain=elmira_fedorova" target="_blank" rel="noopener">Telegram</a>
+    <a href="https://instagram.com/elmira_styles/" target="_blank" rel="noopener">Instagram</a>
+    <a href="mailto:elmiragl@gmail.com">Email</a>
+  </div>
+  <button id="installBtn" class="btn btn-ghost" hidden>Установить приложение</button>
+  <p class="footer-note">© Эльмира Федорова, Personal Stylist</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
