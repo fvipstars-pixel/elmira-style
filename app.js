@@ -45,8 +45,9 @@ form.addEventListener('submit', (e) => {
   const service = (data.get('service') || '').toString().trim();
   const date = (data.get('date') || '').toString().trim();
   const comment = (data.get('comment') || '').toString().trim();
+  const pdConsent = form.querySelector('input[name="pdConsent"]');
 
-  if (!name || !contact || !service) {
+  if (!name || !contact || !service || !pdConsent?.checked) {
     form.reportValidity();
     return;
   }

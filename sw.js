@@ -1,8 +1,10 @@
-const CACHE_NAME = 'elmira-style-v3';
+const CACHE_NAME = 'elmira-style-v8';
 const ASSETS = [
   './',
   './index.html',
   './oferta.html',
+  './privacy.html',
+  './consent-personal-data.html',
   './styles.css',
   './app.js',
   './manifest.json',
@@ -31,25 +33,19 @@ self.addEventListener('activate', (event) => {
   self.clients.claim();
 });
 
-self.addEventListener('fetch', (event) => {
-  if (event.request.method !== 'GET') return;
+function networkFirst(event) {
+  event.respondWith(
+    fetch(event.request, { cache: 'no-store' })
+      .then((response) => {
+        const copy = response.clone();
+        caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
+        return response;
+      })
+      .catch(() => caches.match(event.request).then((cached) => cached || caches.match('./index.html')))
+  );
+}
 
-  // Pages (HTML) go network-first so visitors always get the latest content;
-  // the cache is only a fallback for offline viewing of the last-seen version.
-  if (event.request.mode === 'navigate') {
-    event.respondWith(
-      fetch(event.request)
-        .then((response) => {
-          const copy = response.clone();
-          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
-          return response;
-        })
-        .catch(() => caches.match(event.request).then((cached) => cached || caches.match('./index.html')))
-    );
-    return;
-  }
-
-  // Static assets (css, js, images) stay cache-first for speed and offline use.
+function cacheFirst(event) {
   event.respondWith(
     caches.match(event.request).then(
       (cached) =>
@@ -63,4 +59,19 @@ self.addEventListener('fetch', (event) => {
           .catch(() => cached)
     )
   );
+}
+
+self.addEventListener('fetch', (event) => {
+  if (event.request.method !== 'GET') return;
+
+  // Pages, styles, and scripts go network-first so visitors always get the
+  // latest content; the cache is only a fallback for offline viewing.
+  // Images rarely change once deployed, so they stay cache-first for speed.
+  const isImage = /\/(icons|media)\//.test(event.request.url);
+
+  if (isImage) {
+    cacheFirst(event);
+  } else {
+    networkFirst(event);
+  }
 });
