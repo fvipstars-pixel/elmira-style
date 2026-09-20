@@ -1,10 +1,11 @@
-const CACHE_NAME = 'elmira-style-v8';
+const CACHE_NAME = 'elmira-style-v9';
 const ASSETS = [
   './',
   './index.html',
   './oferta.html',
   './privacy.html',
   './consent-personal-data.html',
+  './user-agreement.html',
   './styles.css',
   './app.js',
   './manifest.json',
